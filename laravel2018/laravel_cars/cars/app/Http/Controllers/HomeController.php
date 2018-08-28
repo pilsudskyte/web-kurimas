@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-       // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -24,9 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // Gaunu visus userius is User modelio
-        $users = User::all();
-
-        return view('home', ["users" => $users]);
+        return view('home');
     }
 }
