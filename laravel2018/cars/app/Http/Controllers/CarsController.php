@@ -38,15 +38,16 @@ class CarsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+    
     {
         $car = new car();
         // priskiriu car teksta kuris atejo is formos
-        $car->car_name = $request->car_name;
-
-        $car->car_id = 1; //user id visada bus 1
-        $car->car_id = $request->car_id;
-
-        // issaugome i duombaze
+       
+        $car->model = $request->model;
+        $car->brand = $request->brand;
+        $car->reg_number = $request->reg_number ;
+        $car->image = $request->image;
+        
         $car->save();
 
         return redirect()->route('cars.index');
@@ -83,13 +84,15 @@ class CarsController extends Controller
      */
     public function edit($id)
     {
+
          // pasiemu redaguojama masina
          $car = Car::find($id);
-         $cars = car::all();
+        //  $cars = car::all();
          
          return view('car.edit',[
-             "car" => $car, 
-             "owner" => $allOwners
+             "car" => $car 
+             
+            //  "carsItem" => $carsItem
          ]);
     }
     /**
@@ -101,9 +104,12 @@ class CarsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $car = car::find($id);
-        $car->carsItem = $request->carsItem;
-        $car->car_id = $request->car_id;
+        $car = Car::find($id);
+     
+        $car->model = $request->model;
+        $car->brand = $request->brand;
+        $car->reg_number = $request->reg_number ;
+        $car->image = $request->image;
 
         $car->save();
 

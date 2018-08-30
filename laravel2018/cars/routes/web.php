@@ -20,7 +20,6 @@ Route::get("/cars", "CarsController@index")->name('cars.index');
 Route::get("/cars{id}", "CarsController@show")->name('cars.show');
 
 // Sukuriame nauja route'a
-Route::get("/cars", "CarsController@index")->name('car.index');
 
 Route::get("/cars/create", "CarsController@create")->name('car.create');
 
