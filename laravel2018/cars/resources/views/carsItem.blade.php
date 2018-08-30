@@ -9,7 +9,7 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-    <smoll><img src="{{ $car->image }}" ></small>
+    <img src="{{ $car->image }}" >
       <th scope="col">Mašinos modelis</th>
       <th scope="col">Registracijos Nr.</th>
       <th scope="col">Savininkai</th>

@@ -17,7 +17,7 @@ class OwnersTable extends Migration
             $table->increments('id');
             $table->text('name');
             $table->text('surname');
-            $table->integer('car_id')references('id')->on('cars');
+            $table->integer('car_id');
             $table->timestamps();
         });
     }

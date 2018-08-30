@@ -12,8 +12,8 @@
 				<!--  Spausdiname naujienos pavadinima -->
 				<a href="{{ route('news.show', $newsItem->id) }}">
 					{{ $newsItem->title }}
-					<img src="{{ $newsItem->image }}" >
 				</a>
+				<img src="{{ $newsItem->image }}" >
 				
 				<small>
 					Komentaru: 
@@ -29,7 +29,9 @@
 					Skaityti daugiau
 				</a>
 			</p>
+			
 		</div>
+		
 	@endforeach
 </div>
 @endsection

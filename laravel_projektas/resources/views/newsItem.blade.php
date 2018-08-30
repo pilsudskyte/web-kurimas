@@ -6,6 +6,7 @@
 	<a href="{{ route('news.index') }}"><< Grizti i visas naujienas</a>
 	
 	<h1>{{ $newsItem->title }}</h1>
+	<img src="{{ $newsItem->image }}" >
 
 	<p>
 		{{ $newsItem->content }}

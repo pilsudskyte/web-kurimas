@@ -13,4 +13,8 @@ class Comment extends Model
     	return $this->hasOne('App\User', 'id', 'user_id');
     }
 
+    public function newsItem() {
+    	return $this->hasOne('App\NewsItem', 'id', 'news_id');
+    }
+
 }

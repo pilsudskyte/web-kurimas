@@ -20,6 +20,19 @@ Route::get('/', function () {
 // Sukuriame nauja route'a
 Route::get("/news", "NewsController@index")->name('news.index');
 
+// Sukuriame nauja route'a
+Route::get("/comments", "CommentsController@index")->name('comments.index');
+
+Route::get("/comments/create", "CommentsController@create")->name('comments.create');
+
+Route::get("/comments/{id}/edit", "CommentsController@edit")->name('comments.edit');
+
+Route::post("/comments/store", "CommentsController@store")->name('comments.store');
+
+Route::post("/comments/{id}/update", "CommentsController@update")->name('comments.update');
+
+Route::post('/comments/{id}/delete', 'CommentsController@destroy')->name('comments.delete');
+
 // Kelias konkrecios naujienos atvaidavimui
 /* localhost/naujiena.php?id=5 */
 Route::get("/news/{id}", "NewsController@show")->name('news.show');

@@ -26,7 +26,10 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        $Cars = Car::all();
+        
+        // Kreipiames i /resources/views/owners/create.blade.php
+        return view('car.create', ["Cars" => $Cars]);
     }
     /**
      * Store a newly created resource in storage.
@@ -36,7 +39,17 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $car = new car();
+        // priskiriu car teksta kuris atejo is formos
+        $car->car_name = $request->car_name;
+
+        $car->car_id = 1; //user id visada bus 1
+        $car->car_id = $request->car_id;
+
+        // issaugome i duombaze
+        $car->save();
+
+        return redirect()->route('cars.index');
     }
     /**
      * Display the specified resource.
@@ -70,7 +83,14 @@ class CarsController extends Controller
      */
     public function edit($id)
     {
-        //
+         // pasiemu redaguojama masina
+         $car = Car::find($id);
+         $cars = car::all();
+         
+         return view('car.edit',[
+             "car" => $car, 
+             "owner" => $allOwners
+         ]);
     }
     /**
      * Update the specified resource in storage.
@@ -81,7 +101,13 @@ class CarsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $car = car::find($id);
+        $car->carsItem = $request->carsItem;
+        $car->car_id = $request->car_id;
+
+        $car->save();
+
+        return redirect()->route('cars.index');
     }
     /**
      * Remove the specified resource from storage.
@@ -91,6 +117,10 @@ class CarsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Gaunu car pagal ID
+        $car = Car::find($id);
+        $car->delete();
+
+        return redirect()->route('cars.index');
     }
-}
+    }
