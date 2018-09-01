@@ -17,8 +17,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Sukuriame nauja route'a
+
+/*// Sukuriame nauja route'a
+// Kelias konkrecios naujienos atvaidavimui
+/* localhost/naujiena.php?id=5 */
+
 Route::get("/news", "NewsController@index")->name('news.index');
+
+Route::get("/news/{id}", "NewsController@show")->name('news.show');
+
+Route::get("/naujienos/create", "NewsController@create")->name('news.create');
+
+Route::get("/naujienos/edit/{id}", "NewsController@edit")->name('news.edit');
+
+// Post route'as atsakingas uz formos duomenu idejima i duombaze
+Route::post("/naujienos/store", "NewsController@store")->name('news.store');
+// Post route'as atsakingas uz formos duomenu idejima i duombaze
+Route::post("/naujienos/update/{id}", "NewsController@update")->name('news.update');
+
+// Istrynimo route'as
+Route::post("/naujienos/destroy/{id}", "NewsController@destroy")->name('news.destroy');
+
+
+
 
 // Sukuriame nauja route'a
 Route::get("/comments", "CommentsController@index")->name('comments.index');
@@ -33,12 +54,7 @@ Route::post("/comments/{id}/update", "CommentsController@update")->name('comment
 
 Route::post('/comments/{id}/delete', 'CommentsController@destroy')->name('comments.delete');
 
-// Kelias konkrecios naujienos atvaidavimui
-/* localhost/naujiena.php?id=5 */
-Route::get("/news/{id}", "NewsController@show")->name('news.show');
 
-
-Route::get("/naujienos/create", "NewsController@create");
 
 
 Route::get('/skaiciuokle', 'HomeController@skaiciuokle');

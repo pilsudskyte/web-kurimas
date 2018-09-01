@@ -30,3 +30,21 @@ Route::post("/cars/store", "CarsController@store")->name('car.store');
 Route::post("/cars/{id}/update", "CarsController@update")->name('car.update');
 
 Route::post('/cars/{id}/delete', 'CarsController@destroy')->name('car.delete');
+
+//owners routas
+
+Route::get("/owners", "OwnersController@index")->name('owners.index'); 
+
+Route::get("/owners{id}", "OwnersController@show")->name('owners.show');
+
+// Sukuriame nauja route'a
+
+Route::get("/owners/create", "OwnersController@create")->name('owners.create');
+
+Route::get("/owners/{id}/edit", "OwnersController@edit")->name('owners.edit');
+
+Route::post("/owners/store", "OwnersController@store")->name('owners.store');
+
+Route::post("/owners/{id}/update", "OwnersController@update")->name('owners.update');
+
+Route::post('/owners/{id}/delete', 'OwnersController@destroy')->name('owners.delete');

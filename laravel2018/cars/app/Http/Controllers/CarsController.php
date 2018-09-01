@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 
 use App\Car;
 Use App\Owner;
+use Session;
+use Validator;
 
 class CarsController extends Controller
 {
@@ -40,6 +42,16 @@ class CarsController extends Controller
     public function store(Request $request)
     
     {
+        $messages = [
+    		'required' => 'Laukelis :attribute turi buti užpildytas'
+            ];
+        Validator::make($request->all(), [
+            'model' => 'required',
+            'brand' => 'required',
+            'reg_number' => 'required',
+            'image' => 'required',
+    ], $messages)->validate();
+
         $car = new car();
         // priskiriu car teksta kuris atejo is formos
        
@@ -49,6 +61,9 @@ class CarsController extends Controller
         $car->image = $request->image;
         
         $car->save();
+
+        Session::flash( 'status', 'Pridejimas sekmingas' );
+        return redirect()->route('cars.index');
 
         return redirect()->route('cars.index');
     }
@@ -104,6 +119,16 @@ class CarsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $messages = [
+    		'required' => 'Laukelis :attribute turi buti užpildytas'
+            ];
+        Validator::make($request->all(), [
+            'model' => 'required',
+            'brand' => 'required',
+            'reg_number' => 'required',
+            'image' => 'required',
+    ], $messages)->validate();
+
         $car = Car::find($id);
      
         $car->model = $request->model;
@@ -112,6 +137,10 @@ class CarsController extends Controller
         $car->image = $request->image;
 
         $car->save();
+
+        Session::flash( 'status', 'Įrašas atnaujintas sėkmingai' );
+        return redirect()->route('cars.index');
+
 
         return redirect()->route('cars.index');
     }
@@ -127,6 +156,11 @@ class CarsController extends Controller
         $car = Car::find($id);
         $car->delete();
 
+        Session::flash( 'status', 'Automibilis ištrintas sėkmingai' );
+
         return redirect()->route('cars.index');
+
+        
+        
     }
     }

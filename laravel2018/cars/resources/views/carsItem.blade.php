@@ -3,7 +3,9 @@
 @section('content')
 <div class="container">
 
-	<a href="{{ route('cars.index') }}"><< Grizti</a>
+	<a href="{{ route('cars.index') }}"><< Grizti i automobilius</a>
+    <br>
+    <a href="{{ route('owners.index') }}"><< Grizti i savininkus</a>
 	
 	<div class="container">
 <table class="table">

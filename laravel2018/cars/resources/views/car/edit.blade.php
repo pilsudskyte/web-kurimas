@@ -3,6 +3,16 @@
 
 @section('content')
 <div class="container">
+{{-- Klaidu isvedimas pagal laravelio validatoriu--}}
+       @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+     @endif
 <a href="{{ route('cars.index') }}"><< Grizti</a>
 		<div class="row">
 			<div class="col-sm-6">
@@ -12,7 +22,6 @@
 				{{ csrf_field() }}
 				<h3>Masinos modelis</h3>
 				<input type="text" name="model" value="{{ $car->model }}">
-				
 				<hr>
 				<h3>Masinos brand</h3>
 				<input type="text" name="brand" value="{{ $car->brand }}">

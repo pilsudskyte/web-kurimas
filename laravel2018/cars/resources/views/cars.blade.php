@@ -3,6 +3,11 @@
 
 @section('content')
 <div class="container">
+<div class="col-md-8">
+    @if (Session::has('status'))
+         <div class="alert alert-info">{{ Session::get('status') }}</div>
+    @endif
+</div>
 	<h2>AUTOMOBILIAI</h2>
 	<div>
 	<a class="btn btn-success" href="{{ route('car.create') }}">Pridėti masina</a>

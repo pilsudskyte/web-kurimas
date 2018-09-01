@@ -9,6 +9,7 @@ class Car extends Model
     protected $table = "cars";
 
     public function owners() {
-    	return $this->hasOne('App\Owner', 'id', 'owner_id');
+        return $this->hasMany('App\Owner', 'cars_id', 'id');
     }
-}
+    }
+

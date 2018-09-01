@@ -22,6 +22,7 @@ class NewsTable extends Migration
             $table->increments('id');
             $table->text('title');
             $table->longtext('content');
+            $table->longtext('description');
             $table->text('image')->nullabe();
             $table->timestamps();       
         });
