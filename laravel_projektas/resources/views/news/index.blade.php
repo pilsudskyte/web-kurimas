@@ -13,6 +13,7 @@
            href="{{ route('news.create') }}">
             Sukurti naujiena
         </a>
+        <br>
         Is viso naujienu: {{ $newsCount }}
     <!-- Einame per visa naujienu masyva gauta is newsController -->
         @foreach($news as $newsItem)

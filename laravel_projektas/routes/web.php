@@ -26,17 +26,21 @@ Route::get("/news", "NewsController@index")->name('news.index');
 
 Route::get("/news/{id}", "NewsController@show")->name('news.show');
 
-Route::get("/naujienos/create", "NewsController@create")->name('news.create');
 
-Route::get("/naujienos/edit/{id}", "NewsController@edit")->name('news.edit');
+Route::group(['middleware' => "auth"], function() {
+	// Istrynimo route'as
+	Route::post("/naujienos/destroy/{id}", "NewsController@destroy")->name('news.destroy');
 
-// Post route'as atsakingas uz formos duomenu idejima i duombaze
-Route::post("/naujienos/store", "NewsController@store")->name('news.store');
-// Post route'as atsakingas uz formos duomenu idejima i duombaze
-Route::post("/naujienos/update/{id}", "NewsController@update")->name('news.update');
+	// Post route'as atsakingas uz formos duomenu idejima i duombaze
+	Route::post("/naujienos/update/{id}", "NewsController@update")->name('news.update');
 
-// Istrynimo route'as
-Route::post("/naujienos/destroy/{id}", "NewsController@destroy")->name('news.destroy');
+	// Post route'as atsakingas uz formos duomenu idejima i duombaze
+	Route::post("/naujienos/store", "NewsController@store")->name('news.store');
+
+	Route::get("/naujienos/edit/{id}", "NewsController@edit")->name('news.edit');
+
+	Route::get("/naujienos/create", "NewsController@create")->name('news.create');
+});
 
 
 
@@ -44,7 +48,7 @@ Route::post("/naujienos/destroy/{id}", "NewsController@destroy")->name('news.des
 // Sukuriame nauja route'a
 Route::get("/comments", "CommentsController@index")->name('comments.index');
 
-Route::get("/comments/create", "CommentsController@create")->name('comments.create');
+Route::get("/comments/create", "CommentsController@create")->name('comments.create')->middleware('auth');
 
 Route::get("/comments/{id}/edit", "CommentsController@edit")->name('comments.edit');
 

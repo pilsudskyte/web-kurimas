@@ -64,7 +64,7 @@ class NewsController extends Controller {
 		$messages = [
 			'required' => 'Laukelis :attribute turi buti uzpildytas',
 			'title.required' => 'Naujienos pavadinimas turi buti uzpildytas',
-			'email' => 'Laukelis :attribute turi buti el pastas'
+			
 		];
 
 		$validatedData = $request->validate([
@@ -73,7 +73,7 @@ class NewsController extends Controller {
 			// Jei naudojame unique po dvitaskio duomenu bazes pavadinimas
 			// kurioje reiksme turi buti unikali
 			'title' => 'required|unique:news',
-			'description' => 'required|email',
+			
 			'content' => 'required|min:100',
 		], $messages);
 
@@ -146,7 +146,7 @@ class NewsController extends Controller {
 
 		Validator::make($request->all(), [
 			'title' => 'required|unique:news',
-			'description' => 'required|email',
+			
 			'content' => 'required|min:100',
 		], $messages)->validate();
 

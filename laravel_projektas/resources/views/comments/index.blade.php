@@ -16,7 +16,7 @@
 
 				</tr>
 			</thead>
-			@foreach($comments as $comment)
+			@foreach($comments as key->$comment)
 				<tr>
 					<td>{{ $comment->comment_text }} </td>
 					<td>{{ $comment->user->email }} </td>
@@ -31,6 +31,7 @@
 						</a>
 					</td>
 					<td>
+					@if($key != 0 && $key != 1)
 						<form action="{{ route('comments.delete', $comment->id) }}" method="POST">
 							<!--  Su post metodu dirbant sau formom visada butina ideti sita laukeli  -->
 							{{ csrf_field() }}
@@ -38,6 +39,7 @@
 							class="btn btn-danger"
 							type="submit" value="X">
 						</form>
+						@endif
 					</td>
 
 				</tr>
