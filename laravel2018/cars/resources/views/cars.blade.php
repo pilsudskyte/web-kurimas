@@ -21,7 +21,7 @@
     <tr>
       <th scope="col">Mašinos modelis</th>
 			<th scope="col">Registracijos Nr.</th>
-      <th scope="col">Savininkai</th>
+      <th scope="col">Nuomotojai</th>
 			<th scope="col">Redaguoti</th>
 			<th scope="col">Istrinti</th>
     

@@ -14,7 +14,7 @@
     <img src="{{ $car->image }}" >
       <th scope="col">Mašinos modelis</th>
       <th scope="col">Registracijos Nr.</th>
-      <th scope="col">Savininkai</th>
+      <th scope="col">Nuomotojai</th>
     
 	<!-- Einame per visa naujienu masyva gauta is newsController -->
     <tr scope="row">

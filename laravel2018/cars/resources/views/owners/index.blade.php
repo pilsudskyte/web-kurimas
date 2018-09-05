@@ -6,7 +6,7 @@
        
 
 <div class="container">
-<h2>SAVININKAI</h2>
+<h2>Nuomotojai</h2>
 <div class="col-md-8">
     @if (Session::has('status'))
          <div class="alert alert-info">{{ Session::get('status') }}</div>

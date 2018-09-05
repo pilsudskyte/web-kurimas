@@ -50,5 +50,18 @@
 			</p>
 		@endif
 	</div>
+	@if(Auth::user())
+	<form action="{{ route('comments.store') }}" method="POST">
+		{{ csrf_field() }}
+		<h3>Pridėti komentarą</h3>
+		<input type="hidden" name="news_id" value="{{ $newsItem->id }}">
+		<textarea class="form-control" name="comment_text">
+		</textarea>
+
+		<input type="submit" class="btn btn-success" value="Rasyti">
+	</form>
+	@else 
+		<a href="{{ route('login') }}">Prisijunkite </a> norėdami komentuoti
+	@endif
 </div>
 @endsection

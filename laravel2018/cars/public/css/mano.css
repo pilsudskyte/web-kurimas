@@ -1,0 +1,9 @@
+.login-button > .icon {
+    background-image: url(../img/login-icon@2x.png);
+    background-position: center center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 8px 10px;
+    width: 20px;
+    height: 32px;
+}

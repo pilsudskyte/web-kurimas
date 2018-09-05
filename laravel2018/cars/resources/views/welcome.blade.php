@@ -20,35 +20,28 @@
                 height: 100vh;
                 margin: 0;
             }
-
             .full-height {
                 height: 100vh;
             }
-
             .flex-center {
                 align-items: center;
                 display: flex;
                 justify-content: center;
             }
-
             .position-ref {
                 position: relative;
             }
-
             .top-right {
                 position: absolute;
                 right: 10px;
                 top: 18px;
             }
-
             .content {
                 text-align: center;
             }
-
             .title {
                 font-size: 84px;
             }
-
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -58,7 +51,6 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -69,22 +61,22 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">Prisijungti</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('login') }}">Prisijungti</a>
+                        <a href="{{ route('register') }}">Registruotis</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    About Cars 
+                   AUTOMOBILIŲ NUOMA
                 </div>
 
                 <div class="links">
-                    <a href="http://localhost:83/laravel2018/cars/public/cars">Cars</a>
-                    <a href="http://localhost:83/laravel2018/cars/public/owners">Owners</a>
+                    <a href="http://localhost:83/laravel2018/cars/public/cars">AUTOMOBILIAI</a>
+                    <a href="http://localhost:83/laravel2018/cars/public/owners">NUOMOTOJAI</a>
             
                 </div>
             </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Comment;
 use App\NewsItem;
+use Auth;
 
 class CommentsController extends Controller
 {
@@ -52,13 +53,15 @@ class CommentsController extends Controller
         // priskiriu komentaro teksta kuris atejo is formos
         $comment->comment_text = $request->comment_text;
 
-        $comment->user_id = 1; //user id visada bus 1
+        // Gauname prisijungusio vartotojo ID
+        $comment->user_id = Auth::user()->id;
+        
         $comment->news_id = $request->news_id;
 
         // issaugome i duombaze
         $comment->save();
 
-        return redirect()->route('comments.index');
+        return redirect()->route('news.show', $request->news_id);
     }
 
     /**
