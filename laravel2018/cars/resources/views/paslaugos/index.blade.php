@@ -105,7 +105,7 @@
                     <!--== Logo End ==-->
 
                     <!--== Main Menu Start ==-->
-                    <div class="col-lg-8 d-none d-xl-block">
+                    <div class="col-lg-12 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
                                 <li class="active"> <a href="http://localhost:83/laravel2018/cars/public">Home</a>
@@ -125,10 +125,7 @@
 
                                 @endif
                                 @endif
-                                <li><a href="#">Blog</a>
-                                    <ul>
-                                        <li><a href="article.html">ATSILIEPIMAI</a></li>
-                                    </ul>
+                                <li><a href="http://localhost:83/laravel2018/cars/public/comments">ATSILIEPIMAI</a>
                                 </li>
                                 <li><a href="http://localhost:83/laravel2018/cars/public/kontaktai">Kontaktai</a></li>
                              </ul>
@@ -150,10 +147,11 @@
         </div>
         <!--== Header Bottom End ==-->
     </header>
-    <!--== Header Area End ==--> 
+           
+                
  
  <!--== Services Area Start ==-->
- <section id="service-area" class="section-padding">
+ <section id="service-area" class="home-slider-item slider-bg " class="section-padding">
         <div class="container">
             <div class="row">
                 <!-- Section Title Start -->

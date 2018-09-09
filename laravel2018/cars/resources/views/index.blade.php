@@ -105,7 +105,7 @@
                     <!--== Logo End ==-->
 
                     <!--== Main Menu Start ==-->
-                    <div class="col-lg-8 d-none d-xl-block">
+                    <div class="col-lg-12 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
                                 <li class="active"> <a href="http://localhost:83/laravel2018/cars/public">Home</a>
@@ -116,7 +116,7 @@
                                 </li>
                                 @if(Auth::User())
                                 @if(Auth::User()->admin == 1)
-                                <li><a class="text-danger">Redaguoti</a>
+                                <li><a href="" class="text-danger">Redaguoti</a>
                                     <ul>
                                     <a href="http://localhost:83/laravel2018/cars/public/cars">AUTOMOBILIAI</a>
                                     <a href="http://localhost:83/laravel2018/cars/public/owners">NUOMOTOJAI</a>
@@ -125,11 +125,8 @@
 
                                 @endif
                                 @endif
-                                <li><a href="#">Blog</a>
-                                    <ul>
-                                        <li><a href="article.html">ATSILIEPIMAI</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="http://localhost:83/laravel2018/cars/public/comments">ATSILIEPIMAI</a>
+                                
                                 <li><a href="http://localhost:83/laravel2018/cars/public/kontaktai">Kontaktai</a></li>
                              </ul>
                                     @if (Route::has('login'))
@@ -313,13 +310,7 @@
     </section>
     <!--== What We Do Area End ==-->
 
-   
-
-   
-
-   
-   
-    
+      
 
     <!--== Mobile App Area Start ==-->
     <div id="mobileapp-video-bg"></div>

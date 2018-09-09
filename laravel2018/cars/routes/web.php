@@ -30,7 +30,7 @@ Route::get("/cars{id}", "CarsController@show")->name('cars.show');
 Route::get("/autonuoma", "autonuomaController@index")->name('autonuoma.index');
 
 
-
+//web
 Route::get('/kontaktai', function() {
     return view('kontaktai.index');
 });
@@ -47,8 +47,11 @@ Route::get('/success', function() {
     return view('success.index');
 });
 
+Route::get('/atsiliepimai', function() {
+    return view('atsiliepimai.index');
+});
 
-// Sukuriame nauja route'a
+// Sukuriame nauja route'a cars
 Route::group(['middleware' => "auth"], function() {
 Route::get("/cars/create", "CarsController@create")->name('car.create');
 
@@ -81,9 +84,24 @@ Route::post("/owners/{id}/update", "OwnersController@update")->name('owners.upda
 Route::post('/owners/{id}/delete', 'OwnersController@destroy')->name('owners.delete');
 });
 
+//emailo web
 
 Route::get("/MailChimp", "MailChimpController@MailChimp")->name('MailChimp.index'); 
 Route::post('subscribe',['as'=>'subscribe','uses'=>'MailChimpController@subscribe']);
-
- 
 Route::post('sendCompaign',['as'=>'sendCompaign','uses'=>'MailChimpController@sendCompaign']);
+
+//atsiliepimu web
+
+Route::get("/comments", "CommentsController@index")->name('comments.index');
+
+Route::get("/comments/create", "CommentsController@create")->name('comments.create')->middleware('auth');
+
+Route::get("/comments/{id}/edit", "CommentsController@edit")->name('comments.edit');
+
+Route::post("/comments/store", "CommentsController@store")->name('comments.store');
+
+Route::post("/comments/{id}/update", "CommentsController@update")->name('comments.update');
+
+Route::post('/comments/{id}/delete', 'CommentsController@destroy')->name('comments.delete');
+
+

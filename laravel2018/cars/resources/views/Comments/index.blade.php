@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <!DOCTYPE html>
 
 
@@ -126,8 +127,7 @@
                                 @endif
                                 @endif
                                 <li><a href="http://localhost:83/laravel2018/cars/public/comments">ATSILIEPIMAI</a>
-                                   
-                                </li>
+                                
                                 <li><a href="http://localhost:83/laravel2018/cars/public/kontaktai">Kontaktai</a></li>
                              </ul>
                                     @if (Route::has('login'))
@@ -148,70 +148,54 @@
         </div>
         <!--== Header Bottom End ==-->
     </header>
-    <!--== Header Area End ==-->
+	<!--== Header Area End ==-->
+	
+	
+	<section id="service-area" class="home-slider-item slider-bg " class="section-padding">
+	<div class="container">
+		<h1>Visi atsiliepimai</h1>
+		<a class="btn btn-success" href="{{ route('comments.create') }}">Pridėti atsiliepimą</a>
+		<hr>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Turinys</th>
+					<th>Autorius </th>
+					<th>Redaguoti</th>
+					<th>Istrinti</th>
 
- <!--== Slider Area Start ==-->
- <section id="slider-area">
-        <!--== slide Item One ==-->
-        
-        <div class="home-slider-item slider-bg-1" >
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="book-a-car">
-                            <form action="http://localhost:83/laravel2018/cars/public/success">
-                                <!--== Pick Up Location ==-->
-                                <div class="form-group">
-              <label class="col-md-12 control-label" for="name">Jūsų vardas</label>
-              <div class="col-md-9">
-                <input id="name" name="subject" type="text" placeholder="Vardas" class="form-control">
-              </div>
-            </div>
+				</tr>
+			</thead>
+			@foreach($comments as $comment)
+				<tr>
+					<td>{{ $comment->comment_text }} </td>
+					<td>{{ $comment->user->email }} </td>
+				
+					<td>
+						<a class="btn btn-info" href="{{ route('comments.edit', $comment->id)}}">
+							Redaguoti
+						</a>
+					</td>
+					<td>
+						<form action="{{ route('comments.delete', $comment->id) }}" method="POST">
+							<!--  Su post metodu dirbant sau formom visada butina ideti sita laukeli  -->
+							{{ csrf_field() }}
+							<input 
+							class="btn btn-danger"
+							type="submit" value="X">
+						</form>
+					</td>
 
-    
-            <!-- Email input-->
-            <div class="form-group">
-              <label class="col-md-12 control-label" for="email">AUTONUOMA</label>
-              <div class="col-md-9">
-                <input id="email" name="to_email" type="text" placeholder="autonuoma@gmail.com" class="form-control">
-              </div>
-            </div>
+				</tr>
+			
+			@endforeach
+		</table>
+	</div>
 
 
-            <!-- From Email input-->
-            <div class="form-group">
-              <label class="col-md-12 control-label" for="email">Jūsų el. paštas</label>
-              <div class="col-md-9">
-                <input id="email" name="from_email" type="text" placeholder="el. paštas" class="form-control">
-              </div>
-            </div>
 
-    
-            <!-- Message body -->
-            <div class="form-group">
-              <label class="col-md-12 control-label" for="message">Jūsų žinutė</label>
-              <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message" placeholder="Prašome rašyti čia..." rows="5"></textarea>
-              </div>
-            </div>
-
-    
-            <!-- Form actions -->
-            <div class="form-group">
-              <div class="col-md-12 text-right">
-                <button type="submit" class="btn btn-primary btn-lg" href="http://localhost:83/laravel2018/cars/public/success">Siusti</button>
-              </div>
-            </div>
-                            
-                                   
-                        
-    </section>
-    <!--== Slider Area End ==-->
-
-       
-
-    <!--== Footer Area Start ==-->
-    <section id="footer-area">
+<!--== Footer Area Start ==-->
+<section id="footer-area">
         <!-- Footer Widget Start -->
         <div class="footer-widget-area">
             <div class="container">
