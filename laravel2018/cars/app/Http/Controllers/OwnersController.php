@@ -140,7 +140,7 @@ class OwnersController extends Controller
         $owners = Owner::find($id);
         $owners->delete();
         // Susikuriu sesijos pranesima
-		Session::flash( 'status', 'Savininkas  ištrintas ' );
+		Session::flash( 'status', 'Savininkas  ištrintas' );
         return redirect()->route("owners.index");
     }
 }

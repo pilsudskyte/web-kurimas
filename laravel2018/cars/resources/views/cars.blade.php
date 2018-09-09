@@ -1,6 +1,5 @@
 @extends("layouts.app")
 
-
 @section('content')
 <div class="container">
 <div class="col-md-8">
@@ -13,7 +12,7 @@
 
 <div>
 	<a class="btn btn-success" href="{{ route('car.create') }}">Pridėti AUTO</a>
-</div>
+</div>success
 
 	Is viso automobiliu yra: {{ count($cars)}} 
 <table class="table">

@@ -9,15 +9,44 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/apmokejimas', function () { return view('payments'); })->name('moketi');
+Route::post('/paysera/redirect', 'PayseraGatewayController@redirect')->name('paysera-redirect');
+Route::get('/paysera/callback', 'PayseraGatewayController@callback')->name('paysera-callback');
+Route::get('/paysera/uzsakymas-pavyko', 'PayseraGatewayController@callback')->name('pavyko');
+Route::get('/paysera/uzsakymas-nepavyko', function () { return view('paysera.success'); });
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get("/cars", "CarsController@index")->name('cars.index'); 
 
 Route::get("/cars{id}", "CarsController@show")->name('cars.show');
+
+Route::get("/autonuoma", "autonuomaController@index")->name('autonuoma.index');
+
+
+
+Route::get('/kontaktai', function() {
+    return view('kontaktai.index');
+});
+
+Route::get('/apiemus', function() {
+    return view('apiemus.index');
+});
+
+Route::get('/paslaugos', function() {
+    return view('paslaugos.index');
+});
+
+Route::get('/success', function() {
+    return view('success.index');
+});
+
 
 // Sukuriame nauja route'a
 Route::group(['middleware' => "auth"], function() {
@@ -52,3 +81,9 @@ Route::post("/owners/{id}/update", "OwnersController@update")->name('owners.upda
 Route::post('/owners/{id}/delete', 'OwnersController@destroy')->name('owners.delete');
 });
 
+
+Route::get("/MailChimp", "MailChimpController@MailChimp")->name('MailChimp.index'); 
+Route::post('subscribe',['as'=>'subscribe','uses'=>'MailChimpController@subscribe']);
+
+ 
+Route::post('sendCompaign',['as'=>'sendCompaign','uses'=>'MailChimpController@sendCompaign']);
