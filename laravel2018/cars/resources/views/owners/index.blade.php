@@ -26,7 +26,7 @@
 		<th scope="col"> Trinti</th> 
     
 	<!-- Einame per visa masinu masyva gauta is ownersController -->
-	@foreach($owners as $owner)
+	@foreach($owners as $key=>$owner)
     <tr scope="row">
 			<td>{{ $owner->name }} </td>
         <td> {{ $owner->surname }} </td>
@@ -42,6 +42,7 @@
 		
         </td>
         <td>  
+        @if($key != 0 && $key != 1)
          <form action="{{ route('owners.delete', $owner->id) }}" method="POST">
                             <!--  Su post metodu dirbant sau formom visada butina ideti sita laukeli  -->
                             {{ csrf_field() }}
@@ -49,6 +50,7 @@
                             class="btn btn-danger"
                             type="submit" value="X">
                         </form>
+        @endif
          </td>
 	</tr>
 	@endforeach

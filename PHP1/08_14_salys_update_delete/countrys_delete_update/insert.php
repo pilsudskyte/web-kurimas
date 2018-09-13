@@ -77,11 +77,11 @@ include('config.php');
 if (isset($_POST['submit']))
 {
 
-$id = mysql_real_escape_string(htmlspecialchars($_POST['id']));
-$name = mysql_real_escape_string(htmlspecialchars($_POST['name']));
-$countryCode = mysql_real_escape_string(htmlspecialchars($_POST['countryCode']));
-$district = mysql_real_escape_string(htmlspecialchars($_POST['district']));
-$population = mysql_real_escape_string(htmlspecialchars($_POST['population']));
+$id = (htmlspecialchars($_POST['id']));
+$name = (htmlspecialchars($_POST['name']));
+$countryCode = (htmlspecialchars($_POST['countryCode']));
+$district = (htmlspecialchars($_POST['district']));
+$population = (htmlspecialchars($_POST['population']));
 
 if ($id == '' || $name == '' || $countryCode == '' || $district == '' || $population == '')
 {

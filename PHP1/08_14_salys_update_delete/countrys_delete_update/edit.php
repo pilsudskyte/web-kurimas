@@ -79,11 +79,11 @@ if (isset($_GET['submit']))
 if (is_numeric($_GET['id']))
 {
 
-$id = mysql_real_escape_string(htmlspecialchars($_GET['id']));
-$name = mysql_real_escape_string(htmlspecialchars($_GET['name']));
-$countryCode = mysql_real_escape_string(htmlspecialchars($_GET['countryCode']));
-$district = mysql_real_escape_string(htmlspecialchars($_GET['district']));
-$population = mysql_real_escape_string(htmlspecialchars($_GET['population']));
+$id = (htmlspecialchars($_GET['id']));
+$name = (htmlspecialchars($_GET['name']));
+$countryCode = (htmlspecialchars($_GET['countryCode']));
+$district = (htmlspecialchars($_GET['district']));
+$population = (htmlspecialchars($_GET['population']));
 
 
 if ($id == '' || $name == '' || $countryCode == '' || $district == '' || $population == '')

@@ -93,8 +93,11 @@ Route::post('sendCompaign',['as'=>'sendCompaign','uses'=>'MailChimpController@se
 //atsiliepimu web
 
 Route::get("/comments", "CommentsController@index")->name('comments.index');
+Route::get("/comments{id}", "Commentsontroller@show")->name('comments.show');
 
-Route::get("/comments/create", "CommentsController@create")->name('comments.create')->middleware('auth');
+Route::group(['middleware' => "auth"], function() {
+
+Route::get("/comments/create", "CommentsController@create")->name('comments.create');
 
 Route::get("/comments/{id}/edit", "CommentsController@edit")->name('comments.edit');
 
@@ -103,5 +106,7 @@ Route::post("/comments/store", "CommentsController@store")->name('comments.store
 Route::post("/comments/{id}/update", "CommentsController@update")->name('comments.update');
 
 Route::post('/comments/{id}/delete', 'CommentsController@destroy')->name('comments.delete');
+
+});
 
 
