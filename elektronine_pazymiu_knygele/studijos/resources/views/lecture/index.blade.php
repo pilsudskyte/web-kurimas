@@ -42,7 +42,7 @@
 	@foreach($lectures as $lecture)
     <tr scope="row">
 		<td>{{ $lecture->name }} </td>
-        <td> {{ $lecture->description}} </td>
+        <td> {!! $lecture->description!!} </td>
        
     @if(Auth::User())
     @if(Auth::User()->admin == 1)

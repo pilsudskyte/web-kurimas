@@ -18,19 +18,19 @@
       </h2>
       @if(count($student->grades) > 0)
         <table class="table table-responsive{-sm} table-light">
-            <thead><tr><th>Paskaita</th><th>Įvertinimas</th><th>Data</th></tr></thead>
-            <tbody>
+          <thead>
+            <tr>
+              <th>Paskaita</th>
+              <th>Įvertinimas</th>
+            </tr>
+          </thead>
+        <tbody>
               @foreach($student->grades as $grade)
               <tr>
                 <td><a href="{{ route('lectures.show', $grade->lecture->id)}}">{{ $grade->lecture->name }}</a></td>
                 <td>{{ $grade->grade}}</td>
-               
+              
             </tr>
             @endforeach
             @endif
         </div>
-
-
-
-
-@endsection

@@ -43,8 +43,7 @@
       </tr></thead>
       <tbody>
         @foreach($grades as $grade)
-        <td><a href="{{ route('lectures.show', $grade->lecture->id) }}">{{ $grade->lecture->name }}</a></td>
-        <td><a  href="{{ route('students.show', $grade->student->id) }}">{{ $grade->student->name . ' ' . $grade->student->surname }}</td>
+        
         <td>{{ $grade->grade }}</td>
         <td>
           <div class="btn-group" role="group">

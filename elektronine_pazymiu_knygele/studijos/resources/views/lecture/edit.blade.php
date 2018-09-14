@@ -42,7 +42,7 @@
 
     <tr>
     <td>  Paskaitos aprasymas: </td>
-    <td> <textarea type="text" name="surname" value="{!! $lecture->description !!}"></textarea>
+    <td> <textarea type="text" name="description" value="{{ $lecture->description }}"></textarea>
 	</td>
     </tr>
 

@@ -22,10 +22,10 @@
     @if(Auth::User())
     @if(Auth::User()->admin == 1)
  <a href="{{ route('students.create')}}"><button  type="button" class="btn btn-success">Sukurti naują </button></a>
-				<br>
+		<br>
     @endif
     @endif
-				<br>
+		<br>
 	<table class="table">
 		<thead class="thead-dark">
     <th scope="col"> Vardas </th>
@@ -41,7 +41,7 @@
     @endif
     @endif
     
-	<!-- Einame per visa masinu masyva gauta is studentsController -->
+	<!-- Einame per visa studentu masyva gauta is studentsController -->
 	@foreach($students as $student)
     <tr scope="row">
 		<td>{{ $student->name }} </td>
@@ -57,15 +57,15 @@
         </td>
         <td>  
     
-         <form action="{{ route('students.delete', $student->id) }}" method="POST">
-                            <!--  Su post metodu dirbant sau formom visada butina ideti sita laukeli  -->
-                            {{ csrf_field() }}
-                            <input
-                            class="btn btn-danger"
-                            type="submit" value="Ištrinti">
-            </form>
+        <form action="{{ route('students.delete', $student->id) }}" method="POST">
+            <!--  Su post metodu dirbant sau formom visada butina ideti sita laukeli  -->
+            {{ csrf_field() }}
+            <input
+            class="btn btn-danger"
+            type="submit" value="Ištrinti">
+        </form>
      
-         </td>
+        </td>
 	</tr>
     @endif
     @endif

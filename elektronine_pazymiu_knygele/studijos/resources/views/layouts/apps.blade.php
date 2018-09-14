@@ -8,8 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--=== Favicon ===-->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-
+ 
     <title>Elektronine pazymiu knygele</title>
 
     <!--=== Bootstrap CSS ===-->
@@ -39,15 +38,10 @@
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
 
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body >
     
-
     <!--== Header Area Start ==-->
     <header id="header-area" class="fixed-top">
         
@@ -108,7 +102,7 @@
                                 </li>
                                 <li><a href="http://localhost:83/elektronine_pazymiu_knygele/studijos/public/students">Studentai</a></li>
                                 <li><a href="http://localhost:83/elektronine_pazymiu_knygele/studijos/public/lectures">Paskaitos</a></li>
-                                <li><a class="nav-link" href="{{ route('grades.index') }}">Įvertinimai</a></li>
+                                <li><a href="http://localhost:83/elektronine_pazymiu_knygele/studijos/public/grades">Įvertinimai</a></li>
                             </ul>
                                   
                         </nav>

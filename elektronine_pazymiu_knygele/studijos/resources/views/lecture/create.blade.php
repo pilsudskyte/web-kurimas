@@ -40,7 +40,7 @@
 
     <tr>
     <td>  Paskaitos aprašymas </td>
-    <td> <textarea type="text" name="descrioption"
+    <td> <textarea type="text" name="description"
     value="{{ old('description') }}"></textarea>
     </td>
     </tr>
