@@ -1,14 +1,8 @@
 @extends("layouts.apps")
 
-
 @section('content')
-<!--== Services Area Start ==-->
-<section id="service-area" class="home-slider-item slider-bg " class="section-padding">
-        <div class="container">
-            <div class="row">
-                <!-- Section Title Start -->
-                <div class="col-lg-12">
-                    <div class="section-title  text-left">
+
+<section id="service-area" class="home-slider-item slider-bg-1 " class="section-padding">  
 
 <div class="container">
 <h2>STUDENTAI</h2>
@@ -17,7 +11,7 @@
          <div class="alert alert-info">{{ Session::get('status') }}</div>
     @endif
 </div>
-<h5> Viso studentų yra: {{ $students->count() }} </h5>
+<h5> Iš viso  studentų yra: {{ $students->count() }} </h5>
 
     @if(Auth::User())
     @if(Auth::User()->admin == 1)
@@ -26,8 +20,8 @@
     @endif
     @endif
 		<br>
-	<table class="table">
-		<thead class="thead-dark">
+    <div class="my-3 p-3 bg-white rounded shadow-sm justify-content-around align-items-center">
+    <table class="table table-responsive{-sm} table-light">
     <th scope="col"> Vardas </th>
     <th scope="col"> Pavardė  </th>
     <th scope="col"> Info </th>  
@@ -46,13 +40,19 @@
     <tr scope="row">
 		<td>{{ $student->name }} </td>
         <td> {{ $student->surname }} </td>
-        <td></td>
+        <td>
+			<!-- Kreipimasis i route'a su parametrais -->
+           
+                
+                 Info
+				</a>		
+        </td>
         <td> {{ $student->email }} </td>
         <td> {{ $student->phone }} </td>
         <td>
     @if(Auth::User())
     @if(Auth::User()->admin == 1)  
-            <a href="{{ route('students.edit', $student->id)}}"> <button  type="button" class="btn btn-secondary"> Taisyti </button>
+            <a href="{{ route('students.edit', $student->id)}}"> <button  type="button" class="btn btn-info"> Taisyti </button>
             </a>
         </td>
         <td>  
@@ -62,7 +62,7 @@
             {{ csrf_field() }}
             <input
             class="btn btn-danger"
-            type="submit" value="Ištrinti">
+            type="submit" value="Trinti">
         </form>
      
         </td>

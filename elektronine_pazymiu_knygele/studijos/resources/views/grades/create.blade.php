@@ -1,14 +1,8 @@
 @extends('layouts.apps')
 
 @section("content")
-<!--== Services Area Start ==-->
-<section id="service-area" class="home-slider-item slider-bg " class="section-padding">
-        <div class="container">
-            <div class="row">
-                <!-- Section Title Start -->
-                <div class="col-lg-12">
-                    <div class="section-title  text-left">
-       
+<section id="service-area" class="home-slider-item slider-bg-1 " class="section-padding">  
+  
   <div class="container">
     <a href="{{ route('grades.index') }}">
       ◄ Grįžti atgal į Įvertinimų sąrašą
@@ -21,7 +15,7 @@
     </div>
     <!-- Klaidų išvedimas pagal laravelio validatorių -->
     @if ($errors->any())
-    <div class="alert alert-danger">
+        <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -30,7 +24,7 @@
         </div>
     @endif
     <!--  -->
-  <form method="POST" action="{{ route('grades.store') }}">
+  <form method="post" action="{{ route('grades.store') }}">
     {{ csrf_field() }}
     <div class="row">
       <div class="col-xl-3 col-md-4">
@@ -58,7 +52,7 @@
             </select>
       </div>
       <div class="col-xl-3 col-md-2">
-        <div>Veiksmas</div>
+        <div>Veiksmai</div>
         <input type="submit" class="btn btn-lg btn-success" value="Pridėti">
       </div>
     </div>

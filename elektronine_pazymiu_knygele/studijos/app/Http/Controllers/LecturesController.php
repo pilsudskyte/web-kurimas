@@ -52,9 +52,6 @@ class lecturesController extends Controller
            
     ], $messages)->validate();
 
-   
-
-
         $lecture = new lecture();
         // priskiriu lecture teksta kuris atejo is formos
        

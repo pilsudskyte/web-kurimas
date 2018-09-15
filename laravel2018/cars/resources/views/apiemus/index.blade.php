@@ -26,7 +26,6 @@
                         <ul class="package-list">
                             <li>PRIVATUS VAIRUOTOJAS</li>
                             <li>PILNAS DRAUDIMO PAKETAS</li>
-                  \Symfony\Component\Console\Tests\Tester\ApplicationTesterTest
                             <li>MINI BARAS</li>
                             
                         </ul>

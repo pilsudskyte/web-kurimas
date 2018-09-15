@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-
 <html lang="{{ app()->getLocale() }}">
 
 <head>
@@ -68,12 +67,35 @@
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
+                   
+                       
+                        @guest
+                        <div class="col-lg-3 text-right">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                          
+                        
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                           
+                        @else
+                        
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        @endguest
                     </div>
+                
                     <!--== Social Icons End ==-->
                 </div>
             </div>
@@ -86,13 +108,11 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="http://localhost:83/laravel2018/cars/public" class="logo">Elektronine pazymiu knygute</a>
+                        <a href="http://localhost:83/elektronine_pazymiu_knygele/studijos/public/" class="logo">Elektronine pazymiu knygute</a>
                             <!-- <img src="assets/img/logo.png" alt="JSOFT"> -->
                         </a>
                     </div>
-                    <!--== Logo End ==-->
-                    
-                     
+                    <!--== Logo End ==-->                   
 
                     <!--== Main Menu Start ==-->
                     <div class="col-lg-12 d-none d-xl-block">
@@ -103,40 +123,11 @@
                                 <li><a href="http://localhost:83/elektronine_pazymiu_knygele/studijos/public/students">Studentai</a></li>
                                 <li><a href="http://localhost:83/elektronine_pazymiu_knygele/studijos/public/lectures">Paskaitos</a></li>
                                 <li><a href="http://localhost:83/elektronine_pazymiu_knygele/studijos/public/grades">Įvertinimai</a></li>
-                            </ul>
-                                  
-                        </nav>
+                            </ul>                                    
+                        </nav>                        
                     </div>
                     <!--== Main Menu End ==-->
                     <!-- Button trigger modal -->
-                  
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -144,11 +135,11 @@
     </header>
     <!--== Header Area End ==-->
 
+    <main>
+                @yield('content')
+    </main>
 
-<main>
-            @yield('content')
-</main>
-    
+</body>   
     <!--== Footer Area Start ==-->
     <section id="footer-area">
         <!-- Footer Widget Start -->
@@ -197,45 +188,37 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
    <link href="{{ asset('assets/css/bootstrap.min.css') }} " rel="stylesheet">
     <!--=======================Javascript============================-->
     <!--=== Jquery Min Js ===-->
-    <script src"{{ asset('assets/js/jquery-3.2.1.min.js') }}></script>
+    <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
     <!--=== Jquery Migrate Min Js ===-->
-    <script src"{{ asset('assets/js/jquery-migrate.min.js') }}></script>
+    <script src="{{ asset('assets/js/jquery-migrate.min.js') }}"></script>
     <!--=== Popper Min Js ===-->
-    <script src"{{ asset('assets/js/popper.min.js') }}></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <!--=== Bootstrap Min Js ===-->
-    <script src"{{ asset('assets/js/bootstrap.min.js') }}></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <!--=== Gijgo Min Js ===-->
-    <script src"{{ asset('assets/js/plugins/gijgo.js') }}></script>
+    <script src="{{ asset('assets/js/plugins/gijgo.js') }}"></script>
     <!--=== Vegas Min Js ===-->
-    <script src"{{ asset('assets/js/plugins/vegas.min.js') }}></script>
+    <script src="{{ asset('assets/js/plugins/vegas.min.js') }}"></script>
     <!--=== Isotope Min Js ===-->
-    <script src"{{ asset('assets/js/plugins/isotope.min.js') }}></script>
+    <script src="{{ asset('assets/js/plugins/isotope.min.js') }}"></script>
     <!--=== Owl Caousel Min Js ===-->
-    <script src"{{ asset('assets/js/plugins/owl.carousel.min.js') }}></script>
+    <script src="{{ asset('assets/js/plugins/owl.carousel.min.js') }}"></script>
     <!--=== Waypoint Min Js ===-->
-    <script src"{{ asset('assets/js/plugins/waypoints.min.js') }}></script>
+    <script src="{{ asset('assets/js/plugins/waypoints.min.js') }}"></script>
     <!--=== CounTotop Min Js ===-->
-    <script src"{{ asset('assets/js/plugins/counterup.min.js') }}></script>
+    <script src="{{ asset('assets/js/plugins/counterup.min.js') }}"></script>
     <!--=== YtPlayer Min Js ===-->
-    <script src"{{ asset('assets/js/plugins/mb.YTPlayer.js') }}></script>
+    <script src="{{ asset('assets/js/plugins/mb.YTPlayer.js') }}"></script>
     <!--=== Magnific Popup Min Js ===-->
-    <script src"{{ asset('assets/js/plugins/magnific-popup.min.js') }}></script>
+    <script src="{{ asset('assets/js/plugins/magnific-popup.min.js') }}"></script>
     <!--=== Slicknav Min Js ===-->
-    <script src"{{ asset('assets/js/plugins/slicknav.min.js') }}></script>
+    <script src="{{ asset('assets/js/plugins/slicknav.min.js') }}"></script>
 
     <!--=== Mian Js ===-->
-    <script src"{{ asset('assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
-
-   
-  </body>
-
-</html>
-
-
-  </body>
 
 </html>
 

@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/paslaugos', function() {
+    return view('show');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

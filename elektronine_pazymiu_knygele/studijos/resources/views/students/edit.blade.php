@@ -1,19 +1,11 @@
 @extends("layouts.apps")
 
-
 @section('content')
-<!--== Services Area Start ==-->
-<section id="service-area" class="home-slider-item slider-bg " class="section-padding">
-        <div class="container">
-            <div class="row">
-                <!-- Section Title Start -->
-                <div class="col-lg-12">
-                    <div class="section-title  text-left">
-
+<section id="service-area" class="home-slider-item slider-bg-1 " class="section-padding">  
 
 <div class="container">
 
- <a href="{{ route('students.index') }}"><< Grizti i savininkus</a>
+ <a href="{{ route('students.index') }}"><< Grizti i studentus</a>
 
 {{-- Klaidu isvedimas pagal laravelio validatoriu--}}
        @if ($errors->any())

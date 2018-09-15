@@ -27,10 +27,15 @@
         <tbody>
               @foreach($student->grades as $grade)
               <tr>
-                <td><a href="{{ route('lectures.show', $grade->lecture->id)}}">{{ $grade->lecture->name }}</a></td>
+                <td>{{ $grade->lecture->name }}</a></td>
                 <td>{{ $grade->grade}}</td>
               
             </tr>
             @endforeach
             @endif
         </div>
+
+
+
+
+@endsection
