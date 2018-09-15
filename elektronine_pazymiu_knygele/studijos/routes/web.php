@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/paslaugos', function() {
-    return view('show');
-});
 
 Auth::routes();
 
@@ -30,11 +27,6 @@ Auth::routes();
 Route::get("/lectures", "LecturesController@index")->name('lecture.index'); 
 
 // Route::get("/lectures/{id}", "LecturesController@show")->name('lectures.show');
-
-
-
-
-
 
 
 // Sukuriame nauja route'a lectures
@@ -55,7 +47,7 @@ Route::post('/lectures/{id}/delete', 'LecturesController@destroy')->name('lectur
 
 Route::get("/students", "StudentsController@index")->name('students.index'); 
 
-// Route::get("/students/{id}", "StudentsController@show")->name('students.show');
+Route::get("/students/{id}", "StudentsController@show")->name('student.show');
 
 
 

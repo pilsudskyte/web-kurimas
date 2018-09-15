@@ -11,7 +11,7 @@
          <div class="alert alert-info">{{ Session::get('status') }}</div>
     @endif
 </div>
-<h5> Iš viso  paskaitų yra: {{ $lectures->count() }} </h5>
+<h5> Iš viso paskaitų yra: {{ $lectures->count() }} </h5>
 
     @if(Auth::User())
     @if(Auth::User()->admin == 1)
@@ -41,7 +41,7 @@
     @if(Auth::User())
     @if(Auth::User()->admin == 1)
         <td>
-				<a href="{{ route('lecture.edit', $lecture->id)}}"> <button  type="button" class="btn btn-secondary"> Taisyti </button>
+				<a href="{{ route('lecture.edit', $lecture->id)}}"> <button  type="button" class="btn btn-info"> Taisyti </button>
 
         </td>
         <td> 

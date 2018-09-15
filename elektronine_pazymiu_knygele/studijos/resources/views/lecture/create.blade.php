@@ -6,7 +6,9 @@
        
     <div class="container">
 
-        <a href="{{ route('lecture.index') }}"><< Grizti i paskaitas</a>
+        <a href="{{ route('lecture.index') }}"> 
+            ◄ Grįžti atgal į paskaitas
+        </a>
 
             {{-- Klaidu isvedimas pagal laravelio validatoriu--}}
                 @if ($errors->any())

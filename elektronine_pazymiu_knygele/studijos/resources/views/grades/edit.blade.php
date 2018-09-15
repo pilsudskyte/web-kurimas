@@ -2,9 +2,9 @@
 
 @section("content")
 <section id="service-area" class="home-slider-item slider-bg-1 " class="section-padding">  
-  
+
   <div class="container">
-    <a href="{{ route('grades.index') }}">
+    <a href="{{ route('grades.index') }}"> 
       ◄ Grįžti atgal į Įvertinimų sąrašą
     </a>
     <h1>Įvertinimo redagavimas</h1>

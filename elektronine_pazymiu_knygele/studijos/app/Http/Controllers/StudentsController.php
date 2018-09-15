@@ -91,8 +91,6 @@ class studentsController extends Controller
         $student = Student::find($id);
         if ($student) {
           return view('students.show', ["student" => $student]);
-        } else {
-          return redirect()->route('students.index');
         }
     }
     /**
