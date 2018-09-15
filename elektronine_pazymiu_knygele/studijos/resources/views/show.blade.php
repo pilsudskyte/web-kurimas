@@ -30,12 +30,12 @@
                 <td>{{ $grade->lecture->name }}</a></td>
                 <td>{{ $grade->grade}}</td>
               
-            </tr>
+              </tr>
+          </tbody>
             @endforeach
-            @endif
-        </div>
-
-
-
+        </table>
+      @endif
+    </div>
+  </div>
 
 @endsection
