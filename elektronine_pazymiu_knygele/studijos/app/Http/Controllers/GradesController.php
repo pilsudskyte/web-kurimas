@@ -44,6 +44,7 @@ class GradesController extends Controller
         $grade->lecture_id = $request->lecture_id;
         $grade->student_id = $request->student_id;
         
+        $grade->save();
         Session::flash( 'status', $grade->student->name . ' ' . $grade->student->surname . ', ' . $grade->lecture->name . ', įvertinimas: ' . $grade->grade . '. Sėkmingai įvesta.');
         return redirect()->route('grades.create');
     }

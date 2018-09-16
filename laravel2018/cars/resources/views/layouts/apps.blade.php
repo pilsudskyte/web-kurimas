@@ -130,37 +130,48 @@
                                 <li><a href="http://localhost:83/laravel2018/cars/public/comments">ATSILIEPIMAI</a>
                                 
                                 <li><a href="http://localhost:83/laravel2018/cars/public/kontaktai">Kontaktai</a></li>
-                             </ul>
-                                  
-                        </nav>
-                    </div>
-                    <!--== Main Menu End ==-->
-                    <!-- Button trigger modal -->
-                    @guest
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" class="alignright">
-                Prisijungti
-              </button>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" class="alignright">
-                Registruotis
-              </button>
-              @else 
-              sveiki prisijungę!
-              @endguest 
-       
-                                   
-                </div>
-            </div>
-        </div>
-        <!--== Header Bottom End ==-->
-    </header>
-    <!--== Header Area End ==-->
+                                @guest
+                  
+                  <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+            
+          
+                  <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+             
+                  @else
+          
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                          {{ Auth::user()->name }} <span class="caret"></span>
+                      </a>
 
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}
+                      </a>
+
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                      </form>
+                  </div>
+                  @endguest
+              </ul>                                    
+          </nav>                        
+      </div>
+      <!--== Main Menu End ==-->
+      <!-- Button trigger modal -->
+  </div>
+</div>
+</nav>
+<!--== Header Bottom End ==-->
+</header>
+<!--== Header Area End ==-->
 
 <main>
-            @yield('content')
+  @yield('content')
 </main>
-    
-    <!--== Footer Area Start ==-->
+
+</body>   
     <section id="footer-area">
         <!-- Footer Widget Start -->
         <div class="footer-widget-area">
@@ -323,14 +334,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!--=== Mian Js ===-->
     <script src="assets/js/main.js"></script>
 
-   
-  </body>
-
 </html>
 
 
-  </body>
-
-</html>
-
+  
 

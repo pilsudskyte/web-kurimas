@@ -13,36 +13,42 @@
 
     <!--=== Bootstrap CSS ===-->
     <link href="{{ asset('assets/css/bootstrap.min.css') }} " rel="stylesheet">
-     <!--=== Animate CSS ===-->
+    <!--=== Animate CSS ===-->
     <link href="{{ asset('assets/css/plugins/animate.css') }} " rel="stylesheet">
     <!--=== Vegas Min CSS ===-->
-   <link href="{{ asset('assets/css/plugins/vegas.min.css') }} " rel="stylesheet">
+    <link href="{{ asset('assets/css/plugins/vegas.min.css') }} " rel="stylesheet">
     <!--=== Slicknav CSS ===-->
-   <link href="{{ asset('assets/css/plugins/slicknav.min.css') }} " rel="stylesheet">
+    <link href="{{ asset('assets/css/plugins/slicknav.min.css') }} " rel="stylesheet">
     <!--=== Magnific Popup CSS ===-->
-   <link href="{{ asset('assets/css/plugins/magnific-popup.css') }} " rel="stylesheet">
+    <link href="{{ asset('assets/css/plugins/magnific-popup.css') }} " rel="stylesheet">
     <!--=== Owl Carousel CSS ===-->
-   <link href="{{ asset('assets/css/plugins/owl.carousel.min.css') }} " rel="stylesheet">
+    <link href="{{ asset('assets/css/plugins/owl.carousel.min.css') }} " rel="stylesheet">
     <!--=== Gijgo CSS ===-->
-   <link href="{{ asset('assets/css/plugins/gijgo.css') }} " rel="stylesheet">
+    <link href="{{ asset('assets/css/plugins/gijgo.css') }} " rel="stylesheet">
     <!--=== FontAwesome CSS ===-->
-   <link href="{{ asset('assets/css/font-awesome.css') }} " rel="stylesheet">
+    <link href="{{ asset('assets/css/font-awesome.css') }} " rel="stylesheet">
     <!--=== Theme Reset CSS ===-->
-   <link href="{{ asset('assets/css/reset.css') }} " rel="stylesheet">
+    <link href="{{ asset('assets/css/reset.css') }} " rel="stylesheet">
     <!--=== Main Style CSS ===-->
     <link href="{{ asset('style.css') }} " rel="stylesheet">
     <!--=== Responsive CSS ===-->
-   <link href="{{ asset('assets/css/responsive.css') }} " rel="stylesheet">
-  <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="{{ asset('assets/css/responsive.css') }} " rel="stylesheet">
+  
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
 
 </head>
 
-<body >
+<body class="loader-active">
+    <!--== Preloader Area Start ==-->
+    <div class="preloader">
+        <div class="preloader-spinner">
+            <div class="loader-content">
+             
+            </div>
+        </div>
+    </div>
+    <!--== Preloader Area End ==-->
     
     <!--== Header Area Start ==-->
     <header id="header-area" class="fixed-top">
@@ -68,13 +74,14 @@
                         <i class="fa fa-clock-o"></i> 24/7 :)
                     </div>
                     <!--== Single HeaderTop End ==-->
-
-                    <!--== Social Icons Start ==-->
                    
-                       
-                       
+                    <!--== Social Icons Start ==-->
+                    <div class="col-lg-3 text-right">
+                        <div class="header-social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
                     </div>
-                
                     <!--== Social Icons End ==-->
                 </div>
             </div>
