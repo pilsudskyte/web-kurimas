@@ -9,15 +9,15 @@
       ◄ Grįžti atgal į Studentų sąrašą
     </a>
     <div class="my-3 p-3 bg-white rounded shadow-sm">
-      <h1>
+      <h2>
         Studentas: {{ $student->name . " " . $student->surname }}
-      </h1>
+      </h2>
     </div>
     <hr>
     <div class ="my-3 p-3 bg-white rounder shadow-sm">
-      <h2 class="border-bottom border-gray pb-2 mb-0">
+      <h3 class="border-bottom border-gray pb-2 mb-0">
         Įvertinimų: {{ $student->grades->count() }}
-      </h2>
+      </h3>
       @if(count($student->grades) > 0)
         <table class="table table-responsive{-sm} table-light">
           <thead>

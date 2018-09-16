@@ -75,13 +75,7 @@ class lecturesController extends Controller
      */
     public function show($id)
     {
-        $lecture = Lecture::find($id);
-          if ($lecture) {
-            Session::flash( 'status', 'Paskaita sėkmingai atnaujinta.' );
-            return view('lectures.show', ["lecture" => $lecture]);
-          } else {
-            return redirect()->route('lectures.index');
-          }
+       
       }
     
     /**

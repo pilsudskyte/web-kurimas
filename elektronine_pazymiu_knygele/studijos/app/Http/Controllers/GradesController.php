@@ -28,7 +28,8 @@ class GradesController extends Controller
         //
         $lectures = Lecture::all();
         $students = Student::all();
-        return view('grades.create', ["lectures" => $lectures, "students" => $students]);
+        $grades = Grade::all();
+        return view('grades.create', ["lectures" => $lectures, "students" => $students, "grades" => $grades]);
     }
     /**
      * Store a newly created resource in storage.

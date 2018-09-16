@@ -47,7 +47,7 @@ Route::post('/lectures/{id}/delete', 'LecturesController@destroy')->name('lectur
 
 Route::get("/students", "StudentsController@index")->name('students.index'); 
 
-Route::get("/students/{id}", "StudentsController@show")->name('student.show');
+// Route::get("/students/{id}", "StudentsController@show")->name('student.show');
 
 
 

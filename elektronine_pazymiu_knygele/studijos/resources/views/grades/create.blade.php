@@ -29,7 +29,7 @@
     <div class="row">
       <div class="col-xl-3 col-md-4">
             <label>Paskaita</label>
-            <select class="form-control" name="lecture_id">
+            <select class="form-control" type="text" name="lecture_id">
               @foreach($lectures as $lecture)
                 <option value="{{ $lecture->id }}">{{ $lecture->name }}</option>
               @endforeach
@@ -37,7 +37,7 @@
       </div>
       <div class="col-xl-3 col-md-4">
             <label>Studentas</label>
-            <select class="form-control" name="student_id">
+            <select class="form-control" type="text" name="student_id">
               @foreach($students as $student)
                 <option value="{{ $student->id }}">{{ $student->name . " " . $student->surname }}</option>
               @endforeach
@@ -45,7 +45,7 @@
       </div>
       <div class="col-xl-3 col-md-2">
             <label>Įvertinimas</label>
-            <select class="form-control" name="grade">
+            <select class="form-control" type="text" name="grade">
               @for($i = 0; $i <=10; $i++)
                 <option value="{{ $i }}">{{ $i }}</option>
               @endfor
