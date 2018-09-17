@@ -26,29 +26,29 @@
  <h3> Studentas :</h3> 
 <table class="thead-dark">
     <tr>
-    <td>  Vardas:  </td>
-    <td> <input type="text" name="name" value="{{ $students->name }}">
- 	</td> 
+        <td>  Vardas:  </td>
+        <td> <input type="text" name="name" value="{{ $students->name }}">
+        </td> 
     </tr>
 
     
     <tr>
-    <td>  Pavarde: </td>
-    <td> <input type="text" name="surname" value="{{ $students->surname }}">
-	</td>
+        <td>  Pavarde: </td>
+        <td> <input type="text" name="surname" value="{{ $students->surname }}">
+        </td>
     </tr>
 
     
     <tr>
-    <td>  Emailas: </td>
-    <td> <input type="text" name="email" value="{{ $students->email }}">
-	</td>
+        <td>  Emailas: </td>
+        <td> <input type="text" name="email" value="{{ $students->email }}">
+        </td>
     </tr>
 
     <tr>
-    <td>  Tel. Nr.: </td>
-	<td> <input type="text" name="phone" value="{{ $students->phone }}"> 
-	</td>
+        <td>  Tel. Nr.: </td>
+        <td> <input type="text" name="phone" value="{{ $students->phone }}"> 
+        </td>
     </tr>
 
     <td> <input type="submit" name="submit" class="btn btn-success" value="Atnaujinti"> </td> 

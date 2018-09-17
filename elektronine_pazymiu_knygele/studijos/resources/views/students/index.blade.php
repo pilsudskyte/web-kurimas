@@ -42,10 +42,7 @@
         <td> {{ $student->surname }} </td>
         <td>
 			<!-- Kreipimasis i route'a su parametrais -->
-          <a href="{{ route('students.show', $student->id) }}">
-                
-                 Info
-				</a>		
+          <a href="{{ route('students.show', $student->id) }}">Info</a>		
         </td>
         <td> {{ $student->email }} </td>
         <td> {{ $student->phone }} </td>
@@ -56,7 +53,7 @@
             </a>
         </td>
         <td>  
-    
+
         <form action="{{ route('students.delete', $student->id) }}" method="POST">
             <!--  Su post metodu dirbant sau formom visada butina ideti sita laukeli  -->
             {{ csrf_field() }}
@@ -64,7 +61,6 @@
             class="btn btn-danger"
             type="submit" value="Trinti">
         </form>
-     
         </td>
 	</tr>
     @endif

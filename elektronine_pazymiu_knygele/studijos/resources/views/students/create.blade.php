@@ -7,6 +7,7 @@
 
  <a href="{{ route('students.index') }}"><< Grizti i studentus</a>
 
+
 {{-- Klaidu isvedimas pagal laravelio validatoriu--}}
        @if ($errors->any())
             <div class="alert alert-danger">
@@ -23,41 +24,40 @@
  {{ csrf_field()}}
 <table class="thead-dark">
     <tr>
-    <td>  Vardas:  </td>
-    <td> <input type="text" name="name"
-    {{-- Jei validacija nepraejo, tai atspausdiname senus duomenis--}}
-     value="{{ old('name') }}">
-  	</td>
+        <td>  Vardas:  </td>
+        <td> <input type="text" name="name"
+        {{-- Jei validacija nepraejo, tai atspausdiname senus duomenis--}}
+        value="{{ old('name') }}">
+        </td>
     </tr>
 
     <tr>
-    
-    <td>  Pavardė: </td>
-    <td> <input type="text" name="surname"
-    value="{{ old('surname') }}"
-    > </td>
-    </tr>
-
-
-    <tr>
-    <td>  Emailas:  </td>
-    <td> <input type="text" name="email"
-    {{-- Jei validacija nepraejo, tai atspausdiname senus duomenis--}}
-     value="{{ old('email') }}">
-  	</td>
+        <td>  Pavardė: </td>
+        <td> <input type="text" name="surname"
+        value="{{ old('surname') }}">
+        </td>
     </tr>
 
     <tr>
-    <td>  Tel. Nr.:  </td>
-    <td> <input type="text" name="phone"
-    {{-- Jei validacija nepraejo, tai atspausdiname senus duomenis--}}
-     value="{{ old('phone') }}">
-  	</td>
+        <td>  Emailas:  </td>
+        <td> <input type="text" name="email"
+        {{-- Jei validacija nepraejo, tai atspausdiname senus duomenis--}}
+        value="{{ old('email') }}">
+        </td>
     </tr>
 
+    <tr>
+        <td>  Tel. Nr.:  </td>
+        <td> <input type="text" name="phone"
+        {{-- Jei validacija nepraejo, tai atspausdiname senus duomenis--}}
+        value="{{ old('phone') }}">
+        </td>
+    </tr>
     
     <tr>
-    <td> <input type="submit" name="submit" class="btn btn-success" value="Pridėti naują"> </td> <td> </td>
+        <td> <input type="submit" name="submit" class="btn btn-success" value="Pridėti naują"> </td>
+        <td> 
+        </td>
     </tr>
     
 </table>

@@ -29,15 +29,15 @@
  <h3> PASKAITA :</h3> 
 <table class="thead-dark">
     <tr>
-    <td>  Pavadinimas:  </td>
-    <td> <input type="text" name="name" value="{{ $lecture->name }}">
- 	</td> 
+        <td>  Pavadinimas:  </td>
+        <td> <input type="text" name="name" value="{{ $lecture->name }}">
+        </td> 
     </tr>
 
     <tr>
-    <td>  Paskaitos aprasymas: </td>
-    <td> <textarea type="text" name="description" value="{{ $lecture->description }}"></textarea>
-	</td>
+        <td>  Paskaitos aprasymas: </td>
+        <td> <textarea type="text" name="description" value="{{ $lecture->description }}"></textarea>
+        </td>
     </tr>
 
    
