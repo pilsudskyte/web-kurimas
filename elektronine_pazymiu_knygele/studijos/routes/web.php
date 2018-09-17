@@ -47,14 +47,12 @@ Route::post('/lectures/{id}/delete', 'LecturesController@destroy')->name('lectur
 
 Route::get("/students", "StudentsController@index")->name('students.index'); 
 
-// Route::get("/students/{id}", "StudentsController@show")->name('student.show');
-
-
-
 // Sukuriame nauja route'a
 Route::group(['middleware' => "auth"], function() {
 
 Route::get("/students/create", "StudentsController@create")->name('students.create');
+
+Route::get("/students/{id}", "StudentsController@show")->name('students.show');
 
 Route::get("/students/{id}/edit", "StudentsController@edit")->name('students.edit');
 

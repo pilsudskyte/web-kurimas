@@ -42,7 +42,7 @@
         <td> {{ $student->surname }} </td>
         <td>
 			<!-- Kreipimasis i route'a su parametrais -->
-           
+          <a href="{{ route('students.show', $student->id) }}">
                 
                  Info
 				</a>		
